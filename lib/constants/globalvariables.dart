@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 UserCredential currentUser;
 
@@ -9,3 +10,5 @@ final CameraPosition kGooglePlex = CameraPosition(
 );
 
 String mapKey = "AIzaSyBeGGR_m6OI1M9DSuPWq39cAmLpGtSZ4Vo";
+
+final assetsAudioPlayer = AssetsAudioPlayer();

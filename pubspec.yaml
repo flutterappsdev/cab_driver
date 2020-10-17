@@ -31,6 +31,10 @@ dependencies:
   font_awesome_flutter: ^8.10.0
   animated_text_kit: ^2.4.0
   flutter_geofire: ^1.0.3
+  firebase_messaging: ^7.0.3
+  toast: ^0.1.5
+  assets_audio_player: ^2.0.10
+  maps_toolkit: ^1.1.0+2
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +49,7 @@ flutter:
   assets:
     - assetes/images/
     - assetes/images/user_icon.png
+    - assetes/sound/
     #   - images/a_dot_ham.jpeg
 
 

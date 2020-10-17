@@ -11,6 +11,7 @@ import '../constants/branb_colour.dart';
 import '../widgets/availablity_button.dart';
 import '../constants/globalvariables.dart';
 import '../widgets/confirmsheet.dart';
+import '../helpers/pushnotificationservice.dart';
 
 class HomeTab extends StatefulWidget {
   @override
@@ -46,9 +47,19 @@ class _HomeTabState extends State<HomeTab> {
       //Intializing geoFire
       Geofire.initialize(pathToReference);
       Geofire.setLocation(FirebaseAuth.instance.currentUser.uid,
-          currentLocation.latitude, currentLocation.latitude);
+          currentLocation.latitude, currentLocation.longitude);
+      getCurrentDriverInfo();
     });
     super.initState();
+  }
+
+  void getCurrentDriverInfo () async {
+
+    //currentFirebaseUser = await FirebaseAuth.instance.currentUser();
+    PushNotificationService pushNotificationService = PushNotificationService();
+
+    pushNotificationService.initialize(context);
+    pushNotificationService.getToken();
   }
 
   void setUpPositionLocator() async {
@@ -74,7 +85,7 @@ class _HomeTabState extends State<HomeTab> {
 
       if (isAvailable) {
         Geofire.setLocation(FirebaseAuth.instance.currentUser.uid,
-            currentLocation.latitude, currentLocation.latitude);
+            currentLocation.latitude, currentLocation.longitude);
 
 
       }
